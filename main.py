@@ -20,7 +20,7 @@ async def on_message_delete(message):
         attachments = [await file.to_file() for file in message.attachments]
 
         await channel.send(
-            content = f"Deleted Message in **{message.channel.name}** \n \n`{message.created_at.strftime('%m/%d/%Y, %H:%M:%S')}` {message.author.name}: {message.clean_content}",
+            content = f"Deleted Message in **{message.channel.name}** \n \n`{message.created_at.strftime('%m/%d/%Y, %H:%M:%S')}` {message.author.id}: {message.clean_content}",
             files = attachments
         )
 
